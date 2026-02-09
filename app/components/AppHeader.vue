@@ -1,23 +1,30 @@
 <script setup lang="ts">
-import type { NavigationMenuItem } from '@nuxt/ui'
+import type { NavigationMenuItem } from "@nuxt/ui";
 
 defineProps<{
-  links: NavigationMenuItem[]
+  links: NavigationMenuItem[];
 }>();
 
 function scrlFn() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("header")!.style.width = "calc(var(--spacing) * 90)";
+    document.getElementById("header")!.style.width =
+      "calc(var(--spacing) * 90)";
   } else {
-    document.getElementById("header")!.style.width = "calc(var(--spacing) * 160)";
+    document.getElementById("header")!.style.width =
+      "calc(var(--spacing) * 160)";
   }
 }
 
-addEventListener("scroll", scrlFn);
+onMounted(() => window.addEventListener("scroll", scrlFn));
+onUnmounted(() => removeEventListener("scroll", scrlFn));
 </script>
 
 <template>
-  <div id="header" class="fixed top-2 sm:top-4 mx-auto left-1/2 transform -translate-x-1/2 z-10 max-w-fit md:max-w-full" style="width: calc(var(--spacing) * 160); transition: 0.4s;">
+  <div
+    id="header"
+    class="fixed top-2 sm:top-4 mx-auto left-1/2 transform -translate-x-1/2 z-10 max-w-fit md:max-w-full"
+    style="width: calc(var(--spacing) * 160); transition: 0.4s"
+  >
     <UNavigationMenu
       :items="links"
       variant="link"
@@ -25,14 +32,14 @@ addEventListener("scroll", scrlFn);
       class="bg-muted/80 backdrop-blur-sm rounded-full px-2 sm:px-4 border border-muted/50 shadow-lg shadow-neutral-950/5"
       :ui="{
         link: 'px-2 py-1',
-        linkLeadingIcon: 'hidden'
+        linkLeadingIcon: 'hidden',
       }"
     >
-    <template #list-leading>
-      <ClientOnly>
-        <UContentSearchButton class="rounded-full"/>
-      </ClientOnly>
-    </template>
+      <template #list-leading>
+        <ClientOnly>
+          <UContentSearchButton class="rounded-full" />
+        </ClientOnly>
+      </template>
       <template #list-trailing>
         <ColorModeButton />
       </template>
