@@ -11,11 +11,10 @@ description: I craft intuitive digital experiences where design meets functional
 experience:
   title: Work Experience
   items:
-    - position: Brand Designer at
-      date: 2023 - Present
+    - position: Senior Product Designer
+      date: 2024 - 2025
       company:
-        name: Nuxt
-        logo: i-simple-icons-nuxtdotjs
+        name: Tousan
         url: https://nuxt.com
         color: "#00DC82"
     - position: Assets Designer at
@@ -25,6 +24,13 @@ experience:
         logo: i-simple-icons-raycast
         url: https://raycast.com
         color: "#FF6363"
+    - position: Senior UX/UI Designer at
+      date: 2020 - 2021
+      company:
+        name: Linear
+        logo: i-simple-icons-linear
+        url: https://linear.app
+        color: "#5E6AD2"
     - position: Senior UX/UI Designer at
       date: 2020 - 2021
       company:
